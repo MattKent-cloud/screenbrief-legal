@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ScreenBrief Privacy Policy</title>
+<style>
+  :root { --ink: #16151a; --ink-2: #4a4854; --rule: #e3e1e6; --paper: #fdfdfc; --accent: #120f26; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink: #eceaf0; --ink-2: #a8a4b2; --rule: #2e2b36; --paper: #131218; --accent: #e6c15a; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink);
+         font: 16px/1.65 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width: 46rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .35rem; letter-spacing: -.02em; }
+  h2 { font-size: 1.15rem; margin: 2.4rem 0 .6rem; letter-spacing: -.01em; }
+  h3 { font-size: 1rem; margin: 1.4rem 0 .4rem; }
+  p, li { color: var(--ink-2); }
+  li { margin: .3rem 0; }
+  .meta { color: var(--ink-2); font-size: .9rem; margin: 0 0 2rem; padding-bottom: 1.5rem;
+          border-bottom: 1px solid var(--rule); }
+  .lede { color: var(--ink); font-size: 1.05rem; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; }
+  a { color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; margin: .8rem 0; font-size: .95rem; display: block;
+          overflow-x: auto; }
+  th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>ScreenBrief Privacy Policy</h1>
+<p class="meta">Effective 21 August 2026. Published by Artflow Management.
+Questions: <a href="mailto:contact@artflowmanagement.pl">contact@artflowmanagement.pl</a></p>
+
+<p class="lede">ScreenBrief is a local-first desktop application. Your recordings, transcripts,
+summaries and search index are stored on your own computer. We do not operate a
+server that receives your recordings, and we cannot read them.</p>
+
+<h2>What stays on your computer</h2>
+<p>All of the following live in the ScreenBrief application-data directory belonging to your
+operating-system user account, and never leave it unless you explicitly configure a cloud
+provider as described below:</p>
+<ul>
+  <li>recording and imported media files</li>
+  <li>the application database, including transcripts, summaries, decisions, action items and chat history</li>
+  <li>derived playback files, sampled video frames and the search index</li>
+  <li>downloaded speech-recognition models</li>
+  <li>rotating diagnostic logs</li>
+</ul>
+<p>Transcription and speaker separation run locally by default, using models that execute on your
+own machine.</p>
+
+<h2>What leaves your computer, and only when you ask for it</h2>
+<p>Network egress of your content happens only after you have entered credentials for a provider
+and selected it for a feature. Until then, no recording, transcript or screen frame is sent
+anywhere.</p>
+
+<table>
+  <tr><th>Feature you enable</th><th>What is sent</th><th>Who receives it</th></tr>
+  <tr>
+    <td>Cloud transcription</td>
+    <td>The recording audio</td>
+    <td>The transcription provider you selected: OpenAI, Groq, Deepgram or AssemblyAI</td>
+  </tr>
+  <tr>
+    <td>Summaries, action items, speaker naming, chat</td>
+    <td>The transcript text and the instructions for that feature</td>
+    <td>The analysis provider you selected: Anthropic, OpenAI, Google Gemini, OpenRouter,
+        or an OpenAI-compatible endpoint you entered yourself</td>
+  </tr>
+  <tr>
+    <td>Screen analysis (off by default)</td>
+    <td>Sampled still frames from the recorded video</td>
+    <td>The same analysis provider</td>
+  </tr>
+  <tr>
+    <td>Import from a public link</td>
+    <td>A request to the address you pasted</td>
+    <td>That address only. Connections are validated and pinned to the resolved address.</td>
+  </tr>
+  <tr>
+    <td>Model and GPU-runtime downloads</td>
+    <td>Nothing of yours. These download application assets.</td>
+    <td>The asset host</td>
+  </tr>
+</table>
+
+<p>If you run a local model server such as Ollama, requests stay on your machine's loopback
+interface and your content does not reach a third party. If you enter your own
+OpenAI-compatible endpoint, your data goes to whoever operates that endpoint, and their terms
+govern it.</p>
+
+<h2>Purchases and licensing</h2>
+<p>Payment is handled entirely by Stripe. Opening the purchase page takes you to Stripe's own
+checkout; ScreenBrief never sees or stores your card details. Stripe processes that payment as
+its own controller under its privacy terms.</p>
+<p>To activate and periodically revalidate a paid licence, the application sends your licence key
+and a randomly generated installation identifier to the licensing service. It sends nothing
+else: no recording, transcript, prompt or provider key. The installation identifier exists to
+limit how many devices one licence activates, and it is not derived from your hardware serial
+numbers or your identity.</p>
+
+<h2>Updates</h2>
+<p>If you installed ScreenBrief from the Microsoft Store, updates are delivered by the Store and
+governed by Microsoft's own terms. The Store build contains no separate update mechanism.</p>
+<p>If you installed the version distributed from our website, the application checks a dedicated
+HTTPS host once per launch. The address is fixed inside the signed application at build time and
+cannot be changed by a setting. Such a check exposes ordinary HTTP metadata: your IP address, the
+application version, the platform and the processor architecture. It never carries a recording,
+transcript, prompt, provider key or licence content.</p>
+
+<h2>Crash reports and in-app feedback</h2>
+<p>Crash reporting is off until you turn it on. When enabled, a report contains the application
+and runtime versions, the platform, the type of failure and a sanitised stack trace. It never
+contains recordings, transcripts, prompts, provider keys or log contents. The "Copy diagnostics"
+action puts information on your clipboard and sends nothing.</p>
+<p>When you submit feedback or a bug report from inside the application, we receive exactly four
+things: the moment you sent it, the application version, your operating-system family, and the
+description you typed, plus the name of the screen you were on if the report was sent from one.
+Reports are transmitted to our support inbox and are not stored on your computer. Please do not
+paste confidential material into the description, because whatever you type is what we receive.</p>
+
+<h2>How your provider keys are protected</h2>
+<p>API keys you enter are encrypted with a random master key that is itself protected by the
+operating system's credential store through Electron <code>safeStorage</code>. On Linux, ScreenBrief
+refuses to run with the insecure plain-text fallback. Keys found in older configuration files are
+migrated into encrypted storage and the plain-text copies are removed.</p>
+
+<h2>Redaction of personal data in transcripts</h2>
+<p>An optional filter removes clearly formatted email addresses and telephone numbers from
+transcript text, word-level metadata, correction history and later manual edits. The filter is
+deliberately conservative and is not a substitute for reviewing a recording before you export or
+share it.</p>
+
+<h2>Retention and deletion</h2>
+<p>You control retention, because the data is on your computer. Deleting a recording moves it to
+the application's Trash; items in Trash are removed permanently after 30 days. Deleting the
+application-data directory removes everything, including the database and downloaded models. Data
+you have already sent to a cloud provider is retained according to that provider's policy, not
+ours.</p>
+
+<h2>Recording other people</h2>
+<p>Only record or import material you are entitled to process. Where other people are captured,
+you are responsible for giving any notice and obtaining any consent that the law of your
+jurisdiction requires, before you record and before you send anything to a cloud provider. This
+document describes how the software behaves; it is not legal advice.</p>
+
+<h2>Children</h2>
+<p>ScreenBrief is a professional tool and is not directed at children. We do not knowingly
+collect information from children.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes materially, the effective date at the top changes with it, and the
+change is described in the application's release notes.</p>
+
+<h2>Contact</h2>
+<p>Artflow Management, <a href="mailto:contact@artflowmanagement.pl">contact@artflowmanagement.pl</a></p>
+
+</main>
+</body>
+</html>
