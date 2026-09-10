@@ -98,11 +98,26 @@ govern it.</p>
 <p>Payment is handled entirely by Stripe. Opening the purchase page takes you to Stripe's own
 checkout; ScreenBrief never sees or stores your card details. Stripe processes that payment as
 its own controller under its privacy terms.</p>
-<p>To activate and periodically revalidate a paid licence, the application sends your licence key
-and a randomly generated installation identifier to the licensing service. It sends nothing
-else: no recording, transcript, prompt or provider key. The installation identifier exists to
-limit how many devices one licence activates, and it is not derived from your hardware serial
-numbers or your identity.</p>
+<p>Pro is sold two ways: a monthly subscription that renews automatically, and a single purchase
+that never renews. For a subscription, Stripe stores your billing details as its own controller
+and you manage the subscription through Stripe's customer portal. Reaching that portal needs
+access to the email address used at purchase: Stripe emails a one-time login link. ScreenBrief
+has no account system and no password of yours.</p>
+<p>To activate and periodically revalidate a paid licence, the application sends the licensing
+service three things: your licence key, a randomly generated installation identifier, and a
+digest of hardware identifiers. It sends nothing else: no recording, transcript, prompt or
+provider key.</p>
+<p>The installation identifier is random and limits how many computers one licence activates.
+The hardware digest is what lets a subscription be activated again on the same computer after you
+reinstall your operating system, which erases the random identifier. It is computed from
+identifiers the operating system reports for the machine itself, on Windows the system UUID and
+the mainboard serial number, on macOS the platform UUID. Only a SHA-256 digest of those values is
+ever computed, stored or transmitted; the values themselves never leave your computer and are
+never written to a log. The licensing service keeps the digest combined with an additional secret
+held on the server.</p>
+<p>We will not call that digest anonymous, because it is not. It identifies your machine, so it is
+pseudonymous data, and we process it only to bind a licence to one computer and to restore it on
+the same computer. It is never combined with the content of your recordings.</p>
 
 <h2>Updates</h2>
 <p>If you installed ScreenBrief from the Microsoft Store, updates are delivered by the Store and
